@@ -1,0 +1,5 @@
+include dash_draggable/dash_draggable.min.js
+include dash_draggable/dash_draggable.dev.js
+include dash_draggable/metadata.json
+include dash_draggable/package.json
+include README.md
