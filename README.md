@@ -1,5 +1,7 @@
 # Dash Draggable
 
+![animated-1](images/animated-1.gif)
+
 Dash Draggable is a Dash component library.
 
 Get started with:
