@@ -19,7 +19,8 @@ app.layout = html.Div([
             handle=".handle",
             defaultPosition={'x': 0, 'y': 100},
             position=None,
-            grid=[10, 10],
+            grid=[12, 12],
+            disabled=True,
             children=[
                 html.Div(
                     id='a-div',

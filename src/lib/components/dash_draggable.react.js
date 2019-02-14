@@ -57,7 +57,12 @@ dash_draggable.propTypes = {
     /**
      * ...
      */
-    children: PropTypes.node
+    children: PropTypes.node,
+
+    /**
+     * ...
+     */
+    disabled: PropTypes.bool
 };
 
 export default dash_draggable;
