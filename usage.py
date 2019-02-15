@@ -4,13 +4,18 @@ from dash.dependencies import Input, Output
 import dash_html_components as html
 import dash_core_components as dcc
 import plotly.graph_objs as go
+import dash_daq as daq
+
 
 app = dash.Dash(__name__)
 
 app.scripts.config.serve_locally = True
 app.css.config.serve_locally = True
+app.config['suppress_callback_exceptions']=True
 
 app.layout = html.Div([
+    daq.BooleanSwitch(id='toggle-drag', on=True),
+    html.Div(id='status'),
     html.Div(
         style={'width': '30vw', 'display': 'inline-flex'},
         children=dash_draggable.dash_draggable(
@@ -20,7 +25,6 @@ app.layout = html.Div([
             defaultPosition={'x': 0, 'y': 100},
             position=None,
             grid=[12, 12],
-            disabled=True,
             children=[
                 html.Div(
                     id='a-div',
@@ -76,6 +80,26 @@ app.layout = html.Div([
             ]
         ))
 ])
+
+
+@app.callback(
+    Output('draggable', 'disabled'),
+    [Input('toggle-drag', 'on')]
+)
+def toggle_drag(toggle_status):
+    # True/False
+    return not toggle_status
+
+
+@app.callback(
+    Output('status', 'children'),
+    [Input('toggle-drag', 'on')]
+)
+def can_drag(toggle_status):
+    disabled = toggle_status # True/False
+    print(disabled)
+    return html.P("'Drag Anywhere' Component Draggable: {}".format(disabled))
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
