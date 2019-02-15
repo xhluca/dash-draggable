@@ -2,7 +2,24 @@
   "src/lib/components/dash_draggable.react.js": {
     "description": "...",
     "displayName": "dash_draggable",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleOnDrag",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "data",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "id": {
         "type": {
@@ -17,6 +34,13 @@
         },
         "required": false,
         "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+      },
+      "onDrag": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "..."
       },
       "axis": {
         "type": {
@@ -35,6 +59,20 @@
       "defaultPosition": {
         "type": {
           "name": "object"
+        },
+        "required": false,
+        "description": "..."
+      },
+      "testPosition": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "..."
+      },
+      "testEvent": {
+        "type": {
+          "name": "string"
         },
         "required": false,
         "description": "..."

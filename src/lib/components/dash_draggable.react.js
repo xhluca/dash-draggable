@@ -5,15 +5,31 @@ import Draggable from 'react-draggable';
 /**
  * ...
  */
-const dash_draggable = (props) => {
-    return (
-        <Draggable {...props}>
-            <div>
-                {props.children}
-            </div>
-        </Draggable>
-    );
-};
+class dash_draggable extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+
+        this.handleOnDrag = this.handleOnDrag.bind(this);
+    }
+
+    handleOnDrag(event, data) {
+        console.log(event);
+        console.log(data);
+        this.props.setProps({testPosition: data});
+    }
+
+    render() {
+        return (
+            <Draggable onDrag={this.handleOnDrag}
+                       {...this.props}>
+                <div>
+                    {this.props.children}
+                </div>
+            </Draggable>
+        );
+    }
+}
 
 dash_draggable.defaultProps = {};
 
@@ -32,6 +48,11 @@ dash_draggable.propTypes = {
     /**
      * ...
      */
+    onDrag: PropTypes.func,
+
+    /**
+     * ...
+     */
     axis: PropTypes.string,
 
     /**
@@ -43,6 +64,16 @@ dash_draggable.propTypes = {
      * ...
      */
     defaultPosition: PropTypes.object,
+
+    /**
+     * ...
+     */
+    getPosition: PropTypes.object,
+
+    /**
+     * ...
+     */
+    getEvent: PropTypes.object,
 
     /**
      * ...

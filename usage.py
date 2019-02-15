@@ -16,6 +16,7 @@ app.config['suppress_callback_exceptions']=True
 app.layout = html.Div([
     daq.BooleanSwitch(id='toggle-drag', on=True),
     html.Div(id='status'),
+    html.Div(id='print'),
     html.Div(
         style={'width': '30vw', 'display': 'inline-flex'},
         children=dash_draggable.dash_draggable(
@@ -80,6 +81,16 @@ app.layout = html.Div([
             ]
         ))
 ])
+
+
+@app.callback(
+    Output('print', 'children'),
+    [Input('draggable', 'testEvent'),
+     Input('draggable', 'testPosition')]
+)
+def print_test(event, position):
+    return html.Div([html.P("{}".format(position)),
+                     html.P("{}".format(event))])
 
 
 @app.callback(
