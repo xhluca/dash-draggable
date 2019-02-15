@@ -11,11 +11,12 @@ app = dash.Dash(__name__)
 
 app.scripts.config.serve_locally = True
 app.css.config.serve_locally = True
-app.config['suppress_callback_exceptions']=True
+app.config['suppress_callback_exceptions'] = True
 
 app.layout = html.Div([
     daq.BooleanSwitch(id='toggle-drag', on=True),
     html.Div(id='status'),
+    html.Div(id='print'),
     html.Div(
         style={'width': '30vw', 'display': 'inline-flex'},
         children=dash_draggable.dash_draggable(
@@ -83,6 +84,17 @@ app.layout = html.Div([
 
 
 @app.callback(
+    Output('print', 'children'),
+    [Input('draggable', 'deltaX'),
+     Input('draggable', 'deltaY')]
+)
+def print_test(event, position):
+    return html.Div([html.P("{}".format(position)),
+                     html.P("{}".format(event))])
+
+
+# Disable/Enable dragging on component
+@app.callback(
     Output('draggable', 'disabled'),
     [Input('toggle-drag', 'on')]
 )
@@ -91,14 +103,13 @@ def toggle_drag(toggle_status):
     return not toggle_status
 
 
+# Tell user if dragging is enabled and for which component
 @app.callback(
     Output('status', 'children'),
     [Input('toggle-drag', 'on')]
 )
 def can_drag(toggle_status):
-    disabled = toggle_status # True/False
-    print(disabled)
-    return html.P("'Drag Anywhere' Component Draggable: {}".format(disabled))
+    return html.P("'Drag Anywhere' Component Draggable: {}".format(toggle_status))
 
 
 if __name__ == '__main__':

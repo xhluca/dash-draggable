@@ -2,7 +2,24 @@
   "src/lib/components/dash_draggable.react.js": {
     "description": "...",
     "displayName": "dash_draggable",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleOnDragStop",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "data",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "id": {
         "type": {
@@ -17,6 +34,13 @@
         },
         "required": false,
         "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+      },
+      "onStop": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "..."
       },
       "axis": {
         "type": {
@@ -49,6 +73,34 @@
       "grid": {
         "type": {
           "name": "array"
+        },
+        "required": false,
+        "description": "..."
+      },
+      "lastX": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "..."
+      },
+      "lastY": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "..."
+      },
+      "deltaX": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "..."
+      },
+      "deltaY": {
+        "type": {
+          "name": "number"
         },
         "required": false,
         "description": "..."
