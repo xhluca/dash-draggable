@@ -4,7 +4,7 @@
     "displayName": "dash_draggable",
     "methods": [
       {
-        "name": "handleOnDrag",
+        "name": "handleOnDragStop",
         "docblock": null,
         "modifiers": [],
         "params": [
@@ -35,7 +35,7 @@
         "required": false,
         "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
       },
-      "onDrag": {
+      "onStop": {
         "type": {
           "name": "func"
         },
@@ -63,20 +63,6 @@
         "required": false,
         "description": "..."
       },
-      "getPosition": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "..."
-      },
-      "getEvent": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "..."
-      },
       "position": {
         "type": {
           "name": "object"
@@ -87,6 +73,34 @@
       "grid": {
         "type": {
           "name": "array"
+        },
+        "required": false,
+        "description": "..."
+      },
+      "lastX": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "..."
+      },
+      "lastY": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "..."
+      },
+      "deltaX": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "..."
+      },
+      "deltaY": {
+        "type": {
+          "name": "number"
         },
         "required": false,
         "description": "..."

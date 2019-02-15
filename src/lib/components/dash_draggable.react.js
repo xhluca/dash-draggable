@@ -10,22 +10,36 @@ class dash_draggable extends Component {
         super(props);
         this.state = {};
 
-        this.handleOnDrag = this.handleOnDrag.bind(this);
+        this.handleOnDragStop = this.handleOnDragStop.bind(this);
     }
 
-    handleOnDrag(event, data) {
+    handleOnDragStop(event, data) {
         console.log(event);
         console.log(data);
-        this.props.setProps({testPosition: data});
+        this.props.setProps({
+            lastX: data.lastX,
+            lastY: data.lastY,
+            deltaX: data.deltaX,
+            deltaY: data.deltaY,
+        })
     }
 
     render() {
         return (
-            <Draggable onDrag={this.handleOnDrag}>
-                <div>
-                    {this.props.children}
-                </div>
-            </Draggable>
+            <div id={this.props.id}>
+                <Draggable onStop={this.handleOnDragStop}
+                           axis={this.props.axis}
+                           handle={this.props.handle}
+                           defaultPosition={this.props.defaultPosition}
+                           position={this.props.position}
+                           grid={this.props.grid}
+                           disabled={this.props.disabled}
+                           >
+                    <div>
+                        {this.props.children}
+                    </div>
+                </Draggable>
+            </div>
         );
     }
 }
@@ -47,7 +61,7 @@ dash_draggable.propTypes = {
     /**
      * ...
      */
-    onDrag: PropTypes.func,
+    onStop: PropTypes.func,
 
     /**
      * ...
@@ -67,22 +81,32 @@ dash_draggable.propTypes = {
     /**
      * ...
      */
-    getPosition: PropTypes.object,
-
-    /**
-     * ...
-     */
-    getEvent: PropTypes.object,
-
-    /**
-     * ...
-     */
     position: PropTypes.object,
 
     /**
      * ...
      */
     grid: PropTypes.array,
+
+    /**
+     * ...
+     */
+    lastX: PropTypes.number,
+
+    /**
+     * ...
+     */
+    lastY: PropTypes.number,
+
+    /**
+     * ...
+     */
+    deltaX: PropTypes.number,
+
+    /**
+     * ...
+     */
+    deltaY: PropTypes.number,
 
     /**
      * ...
