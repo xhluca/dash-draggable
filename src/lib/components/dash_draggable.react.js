@@ -21,8 +21,7 @@ class dash_draggable extends Component {
 
     render() {
         return (
-            <Draggable onDrag={this.handleOnDrag}
-                       {...this.props}>
+            <Draggable onDrag={this.handleOnDrag}>
                 <div>
                     {this.props.children}
                 </div>

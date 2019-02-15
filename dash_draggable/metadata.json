@@ -63,16 +63,16 @@
         "required": false,
         "description": "..."
       },
-      "testPosition": {
+      "getPosition": {
         "type": {
-          "name": "string"
+          "name": "object"
         },
         "required": false,
         "description": "..."
       },
-      "testEvent": {
+      "getEvent": {
         "type": {
-          "name": "string"
+          "name": "object"
         },
         "required": false,
         "description": "..."
