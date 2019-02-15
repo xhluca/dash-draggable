@@ -16,7 +16,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Dash-assigned callback that should be called whenever any of the\r\nproperties change"
+        "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
       },
       "axis": {
         "type": {
@@ -56,6 +56,13 @@
       "children": {
         "type": {
           "name": "node"
+        },
+        "required": false,
+        "description": "..."
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
         },
         "required": false,
         "description": "..."

@@ -15,16 +15,14 @@ Keyword arguments:
 - defaultPosition (dict; optional): ...
 - position (dict; optional): ...
 - grid (list; optional): ...
-
-Available events: """
+- disabled (boolean; optional): ..."""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, axis=Component.UNDEFINED, handle=Component.UNDEFINED, defaultPosition=Component.UNDEFINED, position=Component.UNDEFINED, grid=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'axis', 'handle', 'defaultPosition', 'position', 'grid']
+    def __init__(self, children=None, id=Component.UNDEFINED, axis=Component.UNDEFINED, handle=Component.UNDEFINED, defaultPosition=Component.UNDEFINED, position=Component.UNDEFINED, grid=Component.UNDEFINED, disabled=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'axis', 'handle', 'defaultPosition', 'position', 'grid', 'disabled']
         self._type = 'dash_draggable'
         self._namespace = 'dash_draggable'
         self._valid_wildcard_attributes =            []
-        self.available_events = []
-        self.available_properties = ['children', 'id', 'axis', 'handle', 'defaultPosition', 'position', 'grid']
+        self.available_properties = ['children', 'id', 'axis', 'handle', 'defaultPosition', 'position', 'grid', 'disabled']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
