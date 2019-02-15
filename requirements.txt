@@ -1,3 +1,5 @@
 # dash is required to call `build:py`
 dash
 dash-html-components
+dash_core_components
+dash-daq
