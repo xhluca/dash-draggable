@@ -13,6 +13,10 @@ Get started with:
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md)
 
+## Maintainers
+* @SterlingButter - Lead Maintainer
+* @xhlulu - Initial Work
+
 ### Install dependencies
 
 If you have selected install_dependencies during the prompt, you can skip this part.
