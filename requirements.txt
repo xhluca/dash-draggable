@@ -2,4 +2,5 @@
 dash
 dash-html-components
 dash-core-components
+sd-material-ui
 dash-daq

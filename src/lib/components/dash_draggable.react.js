@@ -19,9 +19,18 @@ class dash_draggable extends Component {
         this.props.setProps({
             lastX: data.lastX,
             lastY: data.lastY,
-            deltaX: data.deltaX,
-            deltaY: data.deltaY,
-        })
+            // deltaX: data.deltaX,
+            // deltaY: data.deltaY,
+        });
+        if (data.deltaX !==0 || data.deltaY !==0) {
+            this.props.setProps({
+            moved: true,
+            });
+        }
+        else {
+            this.props.setProps({
+            moved: false,
+            });}
     }
 
     render() {
@@ -107,6 +116,11 @@ dash_draggable.propTypes = {
      * ...
      */
     deltaY: PropTypes.number,
+
+    /**
+     * ...
+     */
+    moved: PropTypes.bool,
 
     /**
      * ...

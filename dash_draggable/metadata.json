@@ -105,6 +105,13 @@
         "required": false,
         "description": "..."
       },
+      "moved": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "..."
+      },
       "children": {
         "type": {
           "name": "node"
