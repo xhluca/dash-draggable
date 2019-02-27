@@ -79,7 +79,7 @@ def remember_position(lastX, lastY, data):
     [State('position-store', 'data'),
      State('graph-container', 'children')]
 )
-def hide_graph(clicks: int, timestamp, data, content):
+def hide_graph(clicked: int, timestamp, data, content):
     if timestamp is None:
         raise PreventUpdate
 
@@ -112,11 +112,14 @@ def hide_graph(clicks: int, timestamp, data, content):
                                     ])
                                 ]),
 
-    if x_prev == x or y_prev == y:
+    if x_prev != x or y_prev != y:  # Moved
+        return content
+    else:
         if content is None or content == []:
             return KNOB
         elif content:
             return []
+
 
 
 if __name__ == '__main__':
