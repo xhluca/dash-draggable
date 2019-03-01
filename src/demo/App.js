@@ -23,6 +23,7 @@ class App extends Component {
                 <dash_draggable
                     setProps={this.setProps}
                     {...this.state}
+
                 />
             </div>
         )
