@@ -15,7 +15,7 @@ Get started with:
 See [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Maintainers
-* @SterlingButter - Lead Maintainer
+* @SterlingButters - Lead Maintainer
 * @xhlulu - Initial Work
 
 ### Install dependencies
